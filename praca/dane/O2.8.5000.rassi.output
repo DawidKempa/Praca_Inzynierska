@@ -1,0 +1,1065 @@
+   This run of MOLCAS is using the pymolcas driver
+
+                             OPE
+                             OPE          NMOL  CASOP  ENMOLC A   SO
+                 OPE        NMOLC        AS  OP EN  MO LC     AS  OP
+                OPENM       OL CA        SO  PE NM  OL CA     SOP EN
+                OP EN      MO   LC       AS  OP ENMOL  CASO   PENMOL
+                OP  EN     MO   LC       AS  OP EN     MO     LC ASO
+               OP   E  NMOL  C  AS       OP  EN MO     LC     AS  OP
+               OP  E   NMO   LC AS        OPEN  MO     LCASOP EN   M
+               O  PEN   MO  LCA  SO
+            OPE   NMO   L   CAS    OP
+        OPENMOL  CASOP     ENMOL   CASOPE
+     OPENMOLCA   SOPENMOLCASOPEN   MOLCASOPE
+    OPENMOLCAS   OP           EN   MOL    CAS
+    OPENMOLCAS       OP  ENM        O     LCA
+    OPENMOLCAS    OPEN  MOLCASO     P  E  NMO
+    OPENMOLCAS     OP               E  N  MOL
+    OPENMOLCA   SO           PENM   O  L  CAS    OPEN    MO    LCAS
+    OPENMOLCA   SOP           ENM   O  L  CAS   OP  EN  MOLC  AS   O
+    OPENMOLCA   SOPE           NM      O  LCA   S      OP  EN MO
+    OPENMOLC                AS         O  PEN   M      OL  CA  SOPE
+    OPENMO        LCASOPE  NMOL        C  ASO   P      ENMOLC     AS
+    OPE     NMO      LCA  SO     P     E   NM   OL  CA SO  PE N   MO
+          OPENMOLCA            SOPE   NMO        LCAS  O    P  ENMO
+     OPENMOLCASOPENMOLCASOPENMOLCASOPENMOLCA
+        OPENMOLCASOPENMOLCASOPENMOLCASOPE
+            OPENMOLCASOPENMOLCASOPENM
+               OPENMOLCASOPENMOLCA        version: 25.02
+                   OPENMOLCASO
+                       OPE                tag: 92-gf4b470f0a
+
+ OpenMolcas is free software; you can redistribute it and/or modify it
+ under the terms of the GNU Lesser General Public License version 2.1.
+ OpenMolcas is distributed in the hope that it will be useful, but it
+ is provided "as is" and without any express or implied warranties.
+ For more details see the full text of the license in the file
+ LICENSE or in <http://www.gnu.org/licenses/>.
+
+                 Copyright (C) The OpenMolcas Authors
+           For the author list and the recommended citation,
+                   consult the file CONTRIBUTORS.md
+
+           *************************************************
+           * pymolcas version py2.29                       *
+           *   build 2ba4516c4d154a59cba941070ba63e2c      *
+           *   (after the EMIL interpreter by V. Veryazov) *
+           *************************************************
+
+configuration info
+------------------
+Host name: iftia91.univ.gda.pl (Linux)
+C Compiler ID: GNU
+C flags: -std=gnu99
+Fortran Compiler ID: GNU
+Fortran flags: -cpp -fdefault-integer-8 -fmax-stack-var-size=1048576
+Definitions: _MOLCAS_;_I8_;_LINUX_
+Parallel: OFF (GA=OFF)
+
+
+   --------------------------------------------------------------------
+  |
+  |           Project: O2
+  |    Submitted from: /scratch/tecumseh/WorkSpace/O2.8.5000
+  |      Scratch area: /scratch/tecumseh/WorkSpace/O2.8.5000
+  |   Save outputs to: WORKDIR
+  |            Molcas: /home/tecumseh/program/OpenMolcas/build
+  |
+  | Scratch area is NOT empty
+  |
+  |    MOLCAS_DRIVER = /home/tecumseh/program/OpenMolcas/build/pymolcas
+  |    MOLCAS_NPROCS = 1
+  |    MOLCAS_SOURCE = /home/tecumseh/program/OpenMolcas/OpenMolcas
+  | MOLCAS_STRUCTURE = 0
+  |
+   --------------------------------------------------------------------
+
+++ ---------   Input file   ---------
+
+>>> COPY $dir/vectors/$Project.$R.1Ag-12S.JobIph $WorkDir/JOBIPH
+
+>>> COPY $dir/vectors/$Project.$R.3Ag-3S.JobIph $WorkDir/JOBIPH01
+
+>>> COPY $dir/vectors/$Project.$R.5Ag-3S.JobIph $WorkDir/JOBIPH02
+
+>>> COPY $dir/vectors/$Project.$R.1B3u-5S.JobIph $WorkDir/JOBIPH03
+
+>>> COPY $dir/vectors/$Project.$R.3B3u-6S.JobIph $WorkDir/JOBIPH04
+
+>>> COPY $dir/vectors/$Project.$R.5B3u-1S.JobIph $WorkDir/JOBIPH05
+
+>>> COPY $dir/vectors/$Project.$R.1B2u-5S.JobIph $WorkDir/JOBIPH06
+
+>>> COPY $dir/vectors/$Project.$R.3B2u-6S.JobIph $WorkDir/JOBIPH07
+
+>>> COPY $dir/vectors/$Project.$R.5B2u-1S.JobIph $WorkDir/JOBIPH08
+
+>>> COPY $dir/vectors/$Project.$R.1B1g-5S.JobIph $WorkDir/JOBIPH09
+
+>>> COPY $dir/vectors/$Project.$R.3B1g-6S.JobIph $WorkDir/JOBIPH10
+
+>>> COPY $dir/vectors/$Project.$R.5B1g-1S.JobIph $WorkDir/JOBIPH11
+
+>>> COPY $dir/vectors/$Project.$R.1B1u-3S.JobIph $WorkDir/JOBIPH12
+
+>>> COPY $dir/vectors/$Project.$R.3B1u-6S.JobIph $WorkDir/JOBIPH13
+
+>>> COPY $dir/vectors/$Project.$R.1B2g-5S.JobIph $WorkDir/JOBIPH14
+
+>>> COPY $dir/vectors/$Project.$R.3B2g-6S.JobIph $WorkDir/JOBIPH15
+
+>>> COPY $dir/vectors/$Project.$R.5B2g-1S.JobIph $WorkDir/JOBIPH16
+
+>>> COPY $dir/vectors/$Project.$R.1B3g-5S.JobIph $WorkDir/JOBIPH17
+
+>>> COPY $dir/vectors/$Project.$R.3B3g-6S.JobIph $WorkDir/JOBIPH18
+
+>>> COPY $dir/vectors/$Project.$R.5B3g-1S.JobIph $WorkDir/JOBIPH19
+
+>>> COPY $dir/vectors/$Project.$R.1Au-5S.JobIph $WorkDir/JOBIPH20
+
+>>> COPY $dir/vectors/$Project.$R.3Au-6S.JobIph $WorkDir/JOBIPH21
+
+>>> COPY $dir/vectors/$Project.$R.5Au-1S.JobIph $WorkDir/JOBIPH22
+
+&RASSI
+
+OMEGa
+NROF=23 12 3 3 5 6 1 5 6 1 5 6 1 3 6 5 6 1 5 6 1 5 6 1
+1 2 3 4 5 6 7 8 9 10 11 12
+1 2 3
+1 2 3
+1 2 3 4 5
+1 2 3 4 5 6
+1
+1 2 3 4 5
+1 2 3 4 5 6
+1
+1 2 3 4 5
+1 2 3 4 5 6
+1
+1 2 3
+1 2 3 4 5 6
+1 2 3 4 5
+1 2 3 4 5 6
+1
+1 2 3 4 5
+1 2 3 4 5 6
+1
+1 2 3 4 5
+1 2 3 4 5 6
+1
+EJOB
+
+-- ----------------------------------
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.1Ag-12S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.3Ag-3S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH01
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.5Ag-3S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH02
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.1B3u-5S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH03
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.3B3u-6S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH04
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.5B3u-1S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH05
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.1B2u-5S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH06
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.3B2u-6S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH07
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.5B2u-1S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH08
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.1B1g-5S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH09
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.3B1g-6S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH10
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.5B1g-1S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH11
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.1B1u-3S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH12
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.3B1u-6S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH13
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.1B2g-5S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH14
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.3B2g-6S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH15
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.5B2g-1S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH16
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.1B3g-5S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH17
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.3B3g-6S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH18
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.5B3g-1S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH19
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.1Au-5S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH20
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.3Au-6S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH21
+
+>>> COPY /home/tecumseh/project/molecule/O2/OpenMolcas/vectors/O2.8.5000.5Au-1S.JobIph /scratch/tecumseh/WorkSpace/O2.8.5000/JOBIPH22
+
+--- Start Module: rassi at Thu Apr 17 11:21:26 2025 ---
+
+()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()
+
+                                               &RASSI
+
+                                   only a single process is used
+                       available to each process: 2.0 GB of memory, 1 thread?
+                                            pid: 300858
+()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()()
+
+
+      ********************************************************************************
+      *                                                                              *
+      *                             General data section                             *
+      *                                                                              *
+      ********************************************************************************
+
+   Specific data for JOBIPH file JOBIPH
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 1Ag 12S                                                             
+
+  STATE IRREP:                1
+  SPIN MULTIPLICITY:          1
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              60
+
+   Specific data for JOBIPH file JOBIPH01
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 3Ag  3S                                                             
+
+  STATE IRREP:                1
+  SPIN MULTIPLICITY:          3
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              42
+
+   Specific data for JOBIPH file JOBIPH02
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 5Ag  3S                                                             
+
+  STATE IRREP:                1
+  SPIN MULTIPLICITY:          5
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              10
+
+   Specific data for JOBIPH file JOBIPH03
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Thu Apr 17 11:21:17 2025        
+
+   CASSCF title (first line only):
+       O2, 1B3u 5S                                                             
+
+  STATE IRREP:                2
+  SPIN MULTIPLICITY:          1
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              40
+
+   Specific data for JOBIPH file JOBIPH04
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 3B3u 6S                                                             
+
+  STATE IRREP:                2
+  SPIN MULTIPLICITY:          3
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              48
+
+   Specific data for JOBIPH file JOBIPH05
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 5B3u 1S                                                             
+
+  STATE IRREP:                2
+  SPIN MULTIPLICITY:          5
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:               8
+
+   Specific data for JOBIPH file JOBIPH06
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Thu Apr 17 11:21:17 2025        
+
+   CASSCF title (first line only):
+       O2, 1B2u 5S                                                             
+
+  STATE IRREP:                3
+  SPIN MULTIPLICITY:          1
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              40
+
+   Specific data for JOBIPH file JOBIPH07
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 3B2u 6S                                                             
+
+  STATE IRREP:                3
+  SPIN MULTIPLICITY:          3
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              48
+
+   Specific data for JOBIPH file JOBIPH08
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 5B2u 1S                                                             
+
+  STATE IRREP:                3
+  SPIN MULTIPLICITY:          5
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:               8
+
+   Specific data for JOBIPH file JOBIPH09
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 1B1g 5S                                                             
+
+  STATE IRREP:                4
+  SPIN MULTIPLICITY:          1
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              36
+
+   Specific data for JOBIPH file JOBIPH10
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 3B1g 6S                                                             
+
+  STATE IRREP:                4
+  SPIN MULTIPLICITY:          3
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              48
+
+   Specific data for JOBIPH file JOBIPH11
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 5B1g 1S                                                             
+
+  STATE IRREP:                4
+  SPIN MULTIPLICITY:          5
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              12
+
+   Specific data for JOBIPH file JOBIPH12
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Thu Apr 17 11:21:17 2025        
+
+   CASSCF title (first line only):
+       O2, 1B1u 3S                                                             
+
+  STATE IRREP:                5
+  SPIN MULTIPLICITY:          1
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              44
+
+   Specific data for JOBIPH file JOBIPH13
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 3B1u 6S                                                             
+
+  STATE IRREP:                5
+  SPIN MULTIPLICITY:          3
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              48
+
+   Specific data for JOBIPH file JOBIPH14
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 1B2g 5S                                                             
+
+  STATE IRREP:                6
+  SPIN MULTIPLICITY:          1
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              40
+
+   Specific data for JOBIPH file JOBIPH15
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 3B2g 6S                                                             
+
+  STATE IRREP:                6
+  SPIN MULTIPLICITY:          3
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              48
+
+   Specific data for JOBIPH file JOBIPH16
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 5B2g 1S                                                             
+
+  STATE IRREP:                6
+  SPIN MULTIPLICITY:          5
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:               8
+
+   Specific data for JOBIPH file JOBIPH17
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 1B3g 5S                                                             
+
+  STATE IRREP:                7
+  SPIN MULTIPLICITY:          1
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              40
+
+   Specific data for JOBIPH file JOBIPH18
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 3B3g 6S                                                             
+
+  STATE IRREP:                7
+  SPIN MULTIPLICITY:          3
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              48
+
+   Specific data for JOBIPH file JOBIPH19
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 5B3g 1S                                                             
+
+  STATE IRREP:                7
+  SPIN MULTIPLICITY:          5
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:               8
+
+   Specific data for JOBIPH file JOBIPH20
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Thu Apr 17 11:21:17 2025        
+
+   CASSCF title (first line only):
+       O2, 1Au 5S                                                              
+
+  STATE IRREP:                8
+  SPIN MULTIPLICITY:          1
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              36
+
+   Specific data for JOBIPH file JOBIPH21
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 3Au 6S                                                              
+
+  STATE IRREP:                8
+  SPIN MULTIPLICITY:          3
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              48
+
+   Specific data for JOBIPH file JOBIPH22
+   -------------------------------------
+
+   Header from SEWARD:
+                            O2, D2h symmetry, aug-cc-pVTZ                      
+        Integrals generated by Gateway/Seward, Wed Apr 16 15:49:05 2025        
+
+   CASSCF title (first line only):
+       O2, 5Au 1S                                                              
+
+  STATE IRREP:                8
+  SPIN MULTIPLICITY:          5
+  ACTIVE ELECTRONS:          12
+  MAX RAS1 HOLES:             0
+  MAX RAS3 ELECTRONS:         0
+  NR OF CONFIG:              12
+ ###############################################################################
+ ###############################################################################
+ ###                                                                         ###
+ ###                                                                         ###
+ ###    WARNING: EJOB used when HEFF is available, possible                  ###
+ ###    extra interaction between states is ignored!                         ###
+ ###                                                                         ###
+ ###                                                                         ###
+ ###############################################################################
+ ###############################################################################
+
+   The following data are common to all the states:
+   ------------------------------------------------
+   (note: frozen counts as inactive, deleted as secondary)
+
+      Nr of irreps: 8
+
+                 Total     No./Irrep 
+      Irrep                  1   2   3   4   5   6   7   8
+                            ag b3u b2u b1g b1u b2g b3g  au
+
+      INACTIVE       2       1   0   0   0   1   0   0   0
+      ACTIVE         8       2   1   1   0   2   1   1   0
+      SECONDARY     82      16  10  10   5  16  10  10   5
+      BASIS         92      19  11  11   5  19  11  11   5
+
+      RAS1           0       0   0   0   0   0   0   0   0
+      RAS2           8       2   1   1   0   2   1   1   0
+      RAS3           0       0   0   0   0   0   0   0   0
+
+        MATRIX ELEMENTS WILL BE COMPUTED FOR THE FOLLOWING ONE-ELECTRON OPERATORS, UNLESS ZERO BY SYMMETRY.
+   (Herm=Hermitian, Anti=Antihermitian, Sing=Singlet operator, Trip=Triplet operator)
+     MLTPL  0   1 (HERMSING)     MLTPL  1   1 (HERMSING)     MLTPL  1   2 (HERMSING)
+     MLTPL  1   3 (HERMSING)     MLTPL  2   1 (HERMSING)     MLTPL  2   2 (HERMSING)
+     MLTPL  2   3 (HERMSING)     MLTPL  2   4 (HERMSING)     MLTPL  2   5 (HERMSING)
+     MLTPL  2   6 (HERMSING)     VELOCITY   1 (ANTISING)     VELOCITY   2 (ANTISING)
+     VELOCITY   3 (ANTISING)     ANGMOM     1 (ANTISING)     ANGMOM     2 (ANTISING)
+     ANGMOM     3 (ANTISING)     MLTPV  2   1 (ANTISING)     MLTPV  2   2 (ANTISING)
+     MLTPV  2   3 (ANTISING)     MLTPV  2   4 (ANTISING)     MLTPV  2   5 (ANTISING)
+     MLTPV  2   6 (ANTISING)
+
+       EIGENSTATES OF A SPIN-FREE HAMILTONIAN WILL BE COMPUTED BASED ON:
+
+  a Hamiltonian matrix assumed to be diagonal with energies read from the wavefunction file(s).
+
+  Nr of states:                   99
+
+   State:        1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20
+  JobIph:        1   1   1   1   1   1   1   1   1   1   1   1   2   2   2   3   3   3   4   4
+ Root nr:        1   2   3   4   5   6   7   8   9  10  11  12   1   2   3   1   2   3   1   2
+
+   State:       21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39  40
+  JobIph:        4   4   4   5   5   5   5   5   5   6   7   7   7   7   7   8   8   8   8   8
+ Root nr:        3   4   5   1   2   3   4   5   6   1   1   2   3   4   5   1   2   3   4   5
+
+   State:       41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59  60
+  JobIph:        8   9  10  10  10  10  10  11  11  11  11  11  11  12  13  13  13  14  14  14
+ Root nr:        6   1   1   2   3   4   5   1   2   3   4   5   6   1   1   2   3   1   2   3
+
+   State:       61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79  80
+  JobIph:       14  14  14  15  15  15  15  15  16  16  16  16  16  16  17  18  18  18  18  18
+ Root nr:        4   5   6   1   2   3   4   5   1   2   3   4   5   6   1   1   2   3   4   5
+
+   State:       81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99
+  JobIph:       19  19  19  19  19  19  20  21  21  21  21  21  22  22  22  22  22  22  23
+ Root nr:        1   2   3   4   5   6   1   1   2   3   4   5   1   2   3   4   5   6   1
+
+  HAMILTONIAN MATRIX FOR THE ORIGINAL STATES:
+
+  Diagonal, with energies
+   -149.60895727   -149.60895725   -149.59712945   -149.44753699   -149.44645132
+   -149.44645129   -149.44283260   -149.43812779   -149.43812779   -149.37888550
+   -149.37418103   -149.31023426   -149.52770430   -149.52770427   -149.51762862
+   -149.60895727   -149.60895725   -149.59712945   -149.60304342   -149.44699415
+   -149.44228967   -149.44228957   -149.37834267   -149.60304353   -149.52824715
+   -149.52354265   -149.52354265   -149.52179050   -149.45959578   -149.60304342
+   -149.60304342   -149.44699415   -149.44228967   -149.44228957   -149.37834267
+   -149.60304353   -149.52824715   -149.52354265   -149.52354265   -149.52179050
+   -149.45959578   -149.60304342   -149.60895727   -149.44645132   -149.44283260
+   -149.43812779   -149.37418103   -149.60895730   -149.52770433   -149.52770430
+   -149.52233344   -149.51762862   -149.45368190   -149.60895727   -149.44283264
+   -149.37888588   -149.37418111   -149.60895727   -149.60895725   -149.59712945
+   -149.52770430   -149.52770427   -149.51762862   -149.60304353   -149.44699419
+   -149.44228978   -149.44228967   -149.37834294   -149.60304342   -149.52824715
+   -149.52354265   -149.52354265   -149.52179050   -149.45959578   -149.60304353
+   -149.60304353   -149.44699419   -149.44228978   -149.44228967   -149.37834294
+   -149.60304342   -149.52824715   -149.52354265   -149.52354265   -149.52179050
+   -149.45959578   -149.60304353   -149.60895730   -149.44645135   -149.44283264
+   -149.43812779   -149.37418111   -149.60895727   -149.52770433   -149.52770430
+   -149.52233344   -149.51762862   -149.45368190   -149.60895730
+
+      OVERLAP MATRIX FOR THE ORIGINAL STATES:
+
+  Diagonal, with elements
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000      1.00000000
+      1.00000000      1.00000000      1.00000000      1.00000000
+
+::    RASSI State    1     Total energy:    -149.60895727442070
+::    RASSI State    2     Total energy:    -149.60895724603506
+::    RASSI State    3     Total energy:    -149.59712944532151
+::    RASSI State    4     Total energy:    -149.44753698584165
+::    RASSI State    5     Total energy:    -149.44645131969924
+::    RASSI State    6     Total energy:    -149.44645129123521
+::    RASSI State    7     Total energy:    -149.44283260142086
+::    RASSI State    8     Total energy:    -149.43812779480973
+::    RASSI State    9     Total energy:    -149.43812779480973
+::    RASSI State   10     Total energy:    -149.37888550413396
+::    RASSI State   11     Total energy:    -149.37418103163810
+::    RASSI State   12     Total energy:    -149.31023425748717
+::    RASSI State   13     Total energy:    -149.52770429704859
+::    RASSI State   14     Total energy:    -149.52770426861761
+::    RASSI State   15     Total energy:    -149.51762861995084
+::    RASSI State   16     Total energy:    -149.60895727442082
+::    RASSI State   17     Total energy:    -149.60895724603509
+::    RASSI State   18     Total energy:    -149.59712944532154
+::    RASSI State   19     Total energy:    -149.60304342410802
+::    RASSI State   20     Total energy:    -149.44699414983478
+::    RASSI State   21     Total energy:    -149.44228967433514
+::    RASSI State   22     Total energy:    -149.44228956858001
+::    RASSI State   23     Total energy:    -149.37834267461554
+::    RASSI State   24     Total energy:    -149.60304352964806
+::    RASSI State   25     Total energy:    -149.52824714862376
+::    RASSI State   26     Total energy:    -149.52354265165994
+::    RASSI State   27     Total energy:    -149.52354265165994
+::    RASSI State   28     Total energy:    -149.52179049956479
+::    RASSI State   29     Total energy:    -149.45959578366612
+::    RASSI State   30     Total energy:    -149.60304342410799
+::    RASSI State   31     Total energy:    -149.60304342410802
+::    RASSI State   32     Total energy:    -149.44699414983489
+::    RASSI State   33     Total energy:    -149.44228967433523
+::    RASSI State   34     Total energy:    -149.44228956858001
+::    RASSI State   35     Total energy:    -149.37834267461554
+::    RASSI State   36     Total energy:    -149.60304352964806
+::    RASSI State   37     Total energy:    -149.52824714862385
+::    RASSI State   38     Total energy:    -149.52354265166002
+::    RASSI State   39     Total energy:    -149.52354265166002
+::    RASSI State   40     Total energy:    -149.52179049956479
+::    RASSI State   41     Total energy:    -149.45959578366626
+::    RASSI State   42     Total energy:    -149.60304342410805
+::    RASSI State   43     Total energy:    -149.60895727442076
+::    RASSI State   44     Total energy:    -149.44645131969921
+::    RASSI State   45     Total energy:    -149.44283260142089
+::    RASSI State   46     Total energy:    -149.43812779437590
+::    RASSI State   47     Total energy:    -149.37418103163824
+::    RASSI State   48     Total energy:    -149.60895730310631
+::    RASSI State   49     Total energy:    -149.52770432573041
+::    RASSI State   50     Total energy:    -149.52770429704864
+::    RASSI State   51     Total energy:    -149.52233344398471
+::    RASSI State   52     Total energy:    -149.51762861995087
+::    RASSI State   53     Total energy:    -149.45368189564994
+::    RASSI State   54     Total energy:    -149.60895727442076
+::    RASSI State   55     Total energy:    -149.44283263587866
+::    RASSI State   56     Total energy:    -149.37888588312637
+::    RASSI State   57     Total energy:    -149.37418110871033
+::    RASSI State   58     Total energy:    -149.60895727442073
+::    RASSI State   59     Total energy:    -149.60895724603503
+::    RASSI State   60     Total energy:    -149.59712944532160
+::    RASSI State   61     Total energy:    -149.52770429704859
+::    RASSI State   62     Total energy:    -149.52770426861755
+::    RASSI State   63     Total energy:    -149.51762861995081
+::    RASSI State   64     Total energy:    -149.60304352964812
+::    RASSI State   65     Total energy:    -149.44699419265004
+::    RASSI State   66     Total energy:    -149.44228977965611
+::    RASSI State   67     Total energy:    -149.44228967433409
+::    RASSI State   68     Total energy:    -149.37834293780418
+::    RASSI State   69     Total energy:    -149.60304342410802
+::    RASSI State   70     Total energy:    -149.52824714862382
+::    RASSI State   71     Total energy:    -149.52354265165999
+::    RASSI State   72     Total energy:    -149.52354265165999
+::    RASSI State   73     Total energy:    -149.52179049956467
+::    RASSI State   74     Total energy:    -149.45959578366626
+::    RASSI State   75     Total energy:    -149.60304352964803
+::    RASSI State   76     Total energy:    -149.60304352964803
+::    RASSI State   77     Total energy:    -149.44699419264995
+::    RASSI State   78     Total energy:    -149.44228977965611
+::    RASSI State   79     Total energy:    -149.44228967433409
+::    RASSI State   80     Total energy:    -149.37834293780409
+::    RASSI State   81     Total energy:    -149.60304342410808
+::    RASSI State   82     Total energy:    -149.52824714862382
+::    RASSI State   83     Total energy:    -149.52354265166005
+::    RASSI State   84     Total energy:    -149.52354265166005
+::    RASSI State   85     Total energy:    -149.52179049956470
+::    RASSI State   86     Total energy:    -149.45959578366623
+::    RASSI State   87     Total energy:    -149.60304352964812
+::    RASSI State   88     Total energy:    -149.60895730310625
+::    RASSI State   89     Total energy:    -149.44645134837850
+::    RASSI State   90     Total energy:    -149.44283263587863
+::    RASSI State   91     Total energy:    -149.43812779480976
+::    RASSI State   92     Total energy:    -149.37418110871039
+::    RASSI State   93     Total energy:    -149.60895727442076
+::    RASSI State   94     Total energy:    -149.52770432573027
+::    RASSI State   95     Total energy:    -149.52770429704859
+::    RASSI State   96     Total energy:    -149.52233344398454
+::    RASSI State   97     Total energy:    -149.51762861995073
+::    RASSI State   98     Total energy:    -149.45368189564996
+::    RASSI State   99     Total energy:    -149.60895730310625
+
+
+
+      ****************************************************************************************************
+      *                                                                                                  *
+      *                                         Spin-free section                                        *
+      *                                                                                                  *
+      *                 Note: index according to input order, order according to energy.                 *
+      *                                                                                                  *
+      ****************************************************************************************************
+
+
+
+  SPIN-FREE ENERGIES:
+  (Shifted by EMIN (a.u.) =       -149.6089573031)
+
+ SF State       Relative EMIN(au)   Rel lowest level(eV)    D:o, cm**(-1)      L_eff   Abs_M
+
+    48             0.0000000000        0.0000000000              0.0000         1.0     0.0
+    88             0.0000000000        0.0000000000              0.0000         1.0     0.0
+    99             0.0000000000        0.0000000000              0.0000         1.0     0.0
+    16             0.0000000287        0.0000007806              0.0063         2.0     2.0
+    43             0.0000000287        0.0000007806              0.0063         2.0     2.0
+    54             0.0000000287        0.0000007806              0.0063         2.0     2.0
+    93             0.0000000287        0.0000007806              0.0063         2.0     2.0
+    58             0.0000000287        0.0000007806              0.0063         2.0     2.0
+     1             0.0000000287        0.0000007806              0.0063         2.0     2.0
+    17             0.0000000571        0.0000015530              0.0125         1.0     0.0
+     2             0.0000000571        0.0000015530              0.0125         1.0     0.0
+    59             0.0000000571        0.0000015530              0.0125         1.0     0.0
+    64             0.0059137735        0.1609219737           1297.9232         2.0     1.0
+    87             0.0059137735        0.1609219737           1297.9232         2.0     1.0
+    24             0.0059137735        0.1609219737           1297.9232         2.0     1.0
+    36             0.0059137735        0.1609219737           1297.9232         2.0     1.0
+    75             0.0059137735        0.1609219737           1297.9232         2.0     1.0
+    76             0.0059137735        0.1609219737           1297.9232         2.0     1.0
+    81             0.0059138790        0.1609248456           1297.9464         1.0     1.0
+    42             0.0059138790        0.1609248456           1297.9464         1.0     1.0
+    31             0.0059138790        0.1609248456           1297.9464         1.0     1.0
+    69             0.0059138790        0.1609248456           1297.9464         1.0     1.0
+    19             0.0059138790        0.1609248456           1297.9464         1.0     1.0
+    30             0.0059138790        0.1609248456           1297.9464         1.0     1.0
+    60             0.0118278578        0.3218524066           2595.9147         1.6     0.0
+    18             0.0118278578        0.3218524066           2595.9147         1.6     0.0
+     3             0.0118278578        0.3218524066           2595.9147         1.6     0.0
+    37             0.0807101545        2.1962351876          17713.8314         2.4     1.0
+    70             0.0807101545        2.1962351876          17713.8314         2.4     1.0
+    82             0.0807101545        2.1962351876          17713.8314         2.4     1.0
+    25             0.0807101545        2.1962351876          17713.8314         2.4     1.0
+    49             0.0812529774        2.2110061510          17832.9673         2.0     0.0
+    94             0.0812529774        2.2110061510          17832.9673         2.0     0.0
+    50             0.0812530061        2.2110069315          17832.9736         2.7     2.0
+    61             0.0812530061        2.2110069315          17832.9736         2.7     2.0
+    13             0.0812530061        2.2110069315          17832.9736         2.7     2.0
+    95             0.0812530061        2.2110069315          17832.9736         2.7     2.0
+    14             0.0812530345        2.2110077051          17832.9798         2.0     0.0
+    62             0.0812530345        2.2110077051          17832.9798         2.0     0.0
+    83             0.0854146514        2.3242510716          18746.3491         1.6     1.0
+    84             0.0854146514        2.3242510716          18746.3491         3.0     3.0
+    39             0.0854146514        2.3242510716          18746.3491         3.0     3.0
+    38             0.0854146514        2.3242510716          18746.3491         1.6     1.0
+    71             0.0854146514        2.3242510716          18746.3491         1.6     1.0
+    72             0.0854146514        2.3242510716          18746.3491         3.0     3.0
+    26             0.0854146514        2.3242510716          18746.3491         1.6     1.0
+    27             0.0854146514        2.3242510716          18746.3491         3.0     3.0
+    51             0.0866238591        2.3571552887          19011.7395         2.4     0.0
+    96             0.0866238591        2.3571552887          19011.7395         2.4     0.0
+    40             0.0871668035        2.3719295590          19130.9021         2.4     1.0
+    28             0.0871668035        2.3719295590          19130.9021         2.4     1.0
+    85             0.0871668035        2.3719295590          19130.9021         2.4     1.0
+    73             0.0871668035        2.3719295590          19130.9021         2.4     1.0
+    52             0.0913286832        2.4851800727          20044.3291         2.4     2.0
+    15             0.0913286832        2.4851800727          20044.3291         2.4     2.0
+    63             0.0913286832        2.4851800727          20044.3291         2.4     2.0
+    97             0.0913286832        2.4851800727          20044.3291         2.4     2.0
+    74             0.1493615194        4.0643339958          32781.0644         1.0     1.0
+    41             0.1493615194        4.0643339958          32781.0644         1.0     1.0
+    86             0.1493615194        4.0643339958          32781.0644         1.0     1.0
+    29             0.1493615194        4.0643339958          32781.0644         1.0     1.0
+    98             0.1552754075        4.2252590868          34079.0128         1.0     0.0
+    53             0.1552754075        4.2252590868          34079.0128         1.0     0.0
+     4             0.1614203173        4.3924706010          35427.6646         3.0     0.0
+    65             0.1619631105        4.4072407562          35546.7940         3.8     1.0
+    77             0.1619631105        4.4072407562          35546.7940         3.8     1.0
+    32             0.1619631533        4.4072419213          35546.8034         2.0     1.0
+    20             0.1619631533        4.4072419213          35546.8034         2.0     1.0
+    89             0.1625059547        4.4220123014          35665.9345         2.7     0.0
+     5             0.1625059834        4.4220130818          35665.9408         3.3     2.0
+    44             0.1625059834        4.4220130818          35665.9408         3.3     2.0
+     6             0.1625060119        4.4220138563          35665.9470         2.7     0.0
+    55             0.1661246672        4.5204824849          36460.1501         3.0     2.0
+    90             0.1661246672        4.5204824849          36460.1501         3.0     2.0
+    45             0.1661247017        4.5204834226          36460.1577         3.0     2.0
+     7             0.1661247017        4.5204834226          36460.1577         3.0     2.0
+    66             0.1666675235        4.5352543553          36579.2933         4.0     3.0
+    78             0.1666675235        4.5352543553          36579.2933         4.0     3.0
+    33             0.1666676288        4.5352572212          36579.3164         2.4     1.0
+    21             0.1666676288        4.5352572212          36579.3164         2.4     1.0
+    79             0.1666676288        4.5352572212          36579.3164         2.4     1.0
+    67             0.1666676288        4.5352572212          36579.3164         2.4     1.0
+    34             0.1666677345        4.5352600989          36579.3396         3.0     3.0
+    22             0.1666677345        4.5352600989          36579.3396         3.0     3.0
+    91             0.1708295083        4.6485077325          37492.7434         1.6     0.0
+     8             0.1708295083        4.6485077325          37492.7434         1.6     0.0
+     9             0.1708295083        4.6485077325          37492.7434         4.0     4.0
+    46             0.1708295087        4.6485077443          37492.7435         4.0     4.0
+    56             0.2300714200        6.2605622732          50494.8401         2.0     0.0
+    10             0.2300717990        6.2605725861          50494.9233         2.0     0.0
+    68             0.2306143653        6.2753365681          50614.0028         2.0     1.0
+    80             0.2306143653        6.2753365681          50614.0028         2.0     1.0
+    23             0.2306146285        6.2753437298          50614.0606         2.0     1.0
+    35             0.2306146285        6.2753437298          50614.0606         2.0     1.0
+    92             0.2347761944        6.3885857071          51527.4187         2.0     2.0
+    57             0.2347761944        6.3885857071          51527.4187         2.0     2.0
+    47             0.2347762715        6.3885878043          51527.4356         2.0     2.0
+    11             0.2347762715        6.3885878043          51527.4356         2.0     2.0
+    12             0.2987230456        8.1286681749          65562.1303         0.0     0.0
+
+++ Dipole transition strengths (spin-free states):
+   -----------------------------------------------
+     for osc. strength at least  1.00000000E-05
+
+  ( Max oscillator strength is only    1.9630858758417341E-012 )
+--
+
+++ Velocity transition strengths (spin-free states):
+   -------------------------------------------------
+     for osc. strength at least  1.00000000E-05
+
+  ( Max oscillator strength is only    7.8433244788216186E-006 )
+--
+
+++ Length and velocity gauge comparison (spin-free states):
+   --------------------------------------------------------
+
+ --------------------------------------------------
+ A comparison between the dipole oscillator strengths in 
+ length and velocity gauge will be performed
+
+     All dipole oscillator differences above the tolerance of   1.00000000E-01  will be printed 
+
+ Due to basis set deficiency these oscillator may be problematic 
+
+ The tolerance is defined as ABS(1-O_l/O_v) 
+ O_l : dipole oscillator strength in length gauge
+ O_p : dipole oscillator strength in velocity gauge
+ --------------------------------------------------
+
+ No problematic oscillator strengths above the tolerance   0.10000000000000001       have been found
+
+--
+
+ Electric-dipole - electric-octupole not included
+ Electric-dipole - magnetic-quadrupole not included
+
+
+      ****************************************************************************************************
+      *                                                                                                  *
+      *                                    Special properties section                                    *
+      *                                                                                                  *
+      ****************************************************************************************************
+
+
+++ I/O STATISTICS
+ 
+  I. General I/O information
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Unit  Name          Flsize      Write/Read            MBytes           Write/Read
+                      (MBytes)       Calls              In/Out           Time, sec.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   1  RUNFILE           0.99 .     266/  262055 .      2.5/   1895.7 .       0/       0
+   2  ANNI              0.00 .       0/       0 .      0.0/      0.0 .       0/       0
+   3  ONEINT            1.54 .       0/  126040 .      0.0/ 152831.4 .       0/      19
+   4  JOBIPH            1.52 .       0/     651 .      0.0/      1.5 .       0/       0
+   5  JOBIPH01          1.22 .       0/     219 .      0.0/      1.3 .       0/       0
+   6  JOBIPH02          1.22 .       0/     219 .      0.0/      1.3 .       0/       0
+   7  JOBIPH03          1.28 .       0/     315 .      0.0/      1.4 .       0/       0
+   8  JOBIPH04          1.32 .       0/     363 .      0.0/      1.4 .       0/       0
+   9  JOBIPH05          1.15 .       0/     123 .      0.0/      1.3 .       0/       0
+  10  JOBIPH06          1.28 .       0/     315 .      0.0/      1.4 .       0/       0
+  11  JOBIPH07          1.32 .       0/     363 .      0.0/      1.4 .       0/       0
+  12  JOBIPH08          1.15 .       0/     123 .      0.0/      1.3 .       0/       0
+  13  JOBIPH09          1.28 .       0/     315 .      0.0/      1.4 .       0/       0
+  14  JOBIPH10          1.32 .       0/     363 .      0.0/      1.4 .       0/       0
+  15  JOBIPH11          1.15 .       0/     123 .      0.0/      1.3 .       0/       0
+  16  JOBIPH12          1.22 .       0/     219 .      0.0/      1.3 .       0/       0
+  17  JOBIPH13          1.32 .       0/     363 .      0.0/      1.4 .       0/       0
+  18  JOBIPH14          1.28 .       0/     315 .      0.0/      1.4 .       0/       0
+  19  JOBIPH15          1.32 .       0/     363 .      0.0/      1.4 .       0/       0
+  20  JOBIPH16          1.15 .       0/     123 .      0.0/      1.3 .       0/       0
+  21  JOBIPH17          1.28 .       0/     315 .      0.0/      1.4 .       0/       0
+  22  JOBIPH18          1.32 .       0/     363 .      0.0/      1.4 .       0/       0
+  23  JOBIPH19          1.15 .       0/     123 .      0.0/      1.3 .       0/       0
+  24  JOBIPH20          1.28 .       0/     315 .      0.0/      1.4 .       0/       0
+  25  JOBIPH21          1.32 .       0/     363 .      0.0/      1.4 .       0/       0
+  26  JOBIPH22          1.15 .       0/     123 .      0.0/      1.3 .       0/       0
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+   *  TOTAL            31.50 .     266/  394572 .      2.5/ 154758.2 .       0/      19
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ 
+  II. I/O Access Patterns
+  - - - - - - - - - - - - - - - - - - - -
+  Unit  Name               % of random
+                         Write/Read calls
+  - - - - - - - - - - - - - - - - - - - -
+   1  RUNFILE             28.6/  11.1
+   2  ANNI                 0.0/   0.0
+   3  ONEINT               0.0/  99.3
+   4  JOBIPH               0.0/  51.9
+   5  JOBIPH01             0.0/  55.7
+   6  JOBIPH02             0.0/  55.7
+   7  JOBIPH03             0.0/  54.0
+   8  JOBIPH04             0.0/  53.4
+   9  JOBIPH05             0.0/  60.2
+  10  JOBIPH06             0.0/  54.0
+  11  JOBIPH07             0.0/  53.4
+  12  JOBIPH08             0.0/  60.2
+  13  JOBIPH09             0.0/  54.0
+  14  JOBIPH10             0.0/  53.4
+  15  JOBIPH11             0.0/  60.2
+  16  JOBIPH12             0.0/  55.7
+  17  JOBIPH13             0.0/  53.4
+  18  JOBIPH14             0.0/  54.0
+  19  JOBIPH15             0.0/  53.4
+  20  JOBIPH16             0.0/  60.2
+  21  JOBIPH17             0.0/  54.0
+  22  JOBIPH18             0.0/  53.4
+  23  JOBIPH19             0.0/  60.2
+  24  JOBIPH20             0.0/  54.0
+  25  JOBIPH21             0.0/  53.4
+  26  JOBIPH22             0.0/  60.2
+  - - - - - - - - - - - - - - - - - - - -
+--
+--- Stop Module: rassi at Thu Apr 17 11:22:07 2025 /rc=_RC_ALL_IS_WELL_ ---
+--- Module rassi spent 40 seconds ---
+
+.##################.
+.# Happy landing! #.
+.##################.
+
+    Timing: Wall=40.45 User=19.90 System=19.91
