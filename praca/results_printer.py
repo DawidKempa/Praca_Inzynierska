@@ -1,6 +1,6 @@
 import os
 
-def print_file_header(file_path, distance, num_states): #Drukuje nagłówek z informacjami o pliku
+def print_file_header(file_path, distance, num_states): 
     print(f"\n{' ANALIZA PLIKU ':=^60}")
     print(f"{'Ścieżka:':<12} {os.path.abspath(file_path)}")
     print(f"{'Odległość R:':<12} {distance*2} Å")
@@ -27,7 +27,7 @@ def print_states_mapping(states_mapping, energies):# Drukuje mapowanie stanów z
     else:
         print("\nNie znaleziono danych o mapowaniu stanów!")
 
-def print_energy_summary(energies):# Drukuje tylko energię stanu podstawowego w prostym formacie
+def print_energy_summary(energies):
 
     if energies:
         min_energy = min(energies.values())

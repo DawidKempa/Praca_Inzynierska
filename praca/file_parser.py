@@ -1,11 +1,11 @@
 import os
 from collections import defaultdict
 
-def extract_distance_from_filename(filename):#Wyciąga odległość 
+def extract_distance_from_filename(filename):
     distance_parts = os.path.basename(filename).split('.')
     return float(f"{distance_parts[1]}.{distance_parts[2]}")
 
-def parse_jobiph_section(lines, current_line_idx, current_data):#Parsuje sekcję JOBIPH    
+def parse_jobiph_section(lines, current_line_idx, current_data): 
     line = lines[current_line_idx]
     if "Specific data for JOBIPH file" in line:
         if current_data:
@@ -24,7 +24,7 @@ def parse_jobiph_section(lines, current_line_idx, current_data):#Parsuje sekcję
     
     return current_data, False
 
-def parse_states_mapping(lines, current_line_idx, states_mapping): #Parsuje mapowanie stanów
+def parse_states_mapping(lines, current_line_idx, states_mapping): 
 
     line = lines[current_line_idx]
     if line.strip().startswith("State:") and current_line_idx + 2 < len(lines):
@@ -39,7 +39,7 @@ def parse_states_mapping(lines, current_line_idx, states_mapping): #Parsuje mapo
             })
     return states_mapping
 
-def parse_energy_line(line, energies): #Parsuje linię z energią
+def parse_energy_line(line, energies): 
     if "RASSI State" in line and "Total energy:" in line:
         parts = line.split()
         state_num = None
@@ -56,7 +56,9 @@ def parse_energy_line(line, energies): #Parsuje linię z energią
             energies[state_num] = energy
     return energies
 
-def parse_single_file(file_path): #Główna funkcja parsująca plik
+
+
+def parse_single_file(file_path):
 
     results = {
         'states_mapping': defaultdict(list),
@@ -73,20 +75,17 @@ def parse_single_file(file_path): #Główna funkcja parsująca plik
     
     current_data = None
     for i, line in enumerate(all_lines):
-        # Liczba stanów
+
         if "Nr of states:" in line:
             results['num_states'] = int(line.split()[-1])
-        
-        # Sekcje JOBIPH
+
         current_data, should_append = parse_jobiph_section(all_lines, i, current_data)
         if should_append:
             results['jobiph_data'].append(current_data)
             current_data = None
         
-        # Mapowanie stanów
         results['states_mapping'] = parse_states_mapping(all_lines, i, results['states_mapping'])
         
-        # Energia stanów
         results['energies'] = parse_energy_line(line, results['energies'])
 
     if current_data:
