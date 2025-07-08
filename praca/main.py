@@ -1,32 +1,9 @@
 import os
 from file_parser import parse_single_file
-from results_printer import (print_file_header, print_jobiph_data, 
-                           print_states_mapping, print_energy_summary,
-                           print_error)
+from database import create_database, save_to_database
 
-def process_file(file_path):
-    
-    try:
-        results = parse_single_file(file_path)
-        
-        print_file_header(file_path, results['distance'], results['num_states'])
-        print_jobiph_data(results['jobiph_data'])
-        print_states_mapping(results['states_mapping'], results['energies'])
-        print_energy_summary(results['energies'])
-        
-    except Exception as e:
-        print_error(e)
-
-
-def show_sorted_sfstate_absm(input_file, max_states=99):
-    """
-    Reads .out file, sorts by SF State, and displays SF State and Abs_M values.
-    Stops after collecting max_states valid entries.
-    
-    Args:
-        input_file (str): Path to the input .out file
-        max_states (int): Maximum number of states to process
-    """
+def get_sfstate_absm_data(input_file, max_states=99):
+    """Pobiera dane SF State i Abs_M z pliku."""
     data = []
     data_section = False
     
@@ -54,19 +31,28 @@ def show_sorted_sfstate_absm(input_file, max_states=99):
                 continue
     
     data.sort(key=lambda x: x[0])
+    return data
+
+def process_all_files(data_dir="dane"):
+    """Przetwarza wszystkie pliki w folderze."""
+    files = [f for f in os.listdir(data_dir) if f.endswith(".rassi.output")]
+    all_results = []
+
+    for filename in sorted(files):
+        file_path = os.path.join(data_dir, filename)
+        try:
+            print(f"Przetwarzam: {filename}")
+            results = parse_single_file(file_path)
+            abs_m_data = get_sfstate_absm_data(file_path)
+            results['abs_m'] = {state: abs_m for state, abs_m in abs_m_data}
+            all_results.append(results)
+        except Exception as e:
+            print(f"Błąd w {filename}: {str(e)}")
     
-    print("SF State | Abs_M")
-    print("----------------")
-    for sf_state, abs_m in data[:max_states]: 
-        print(f"{sf_state:7d} | {abs_m:5.1f}")
-    
-    print(f"\nWyświetlono {len(data)} stanów (limit: {max_states})")
-
-
-
-
+    return all_results
 
 if __name__ == "__main__":
-    file_path = os.path.join("dane", "O2.0.9000.rassi.output")
-    process_file(file_path)
-    show_sorted_sfstate_absm(file_path, max_states=99)
+    create_database()
+    results = process_all_files()
+    save_to_database(results)
+    print("Dane zapisane do bazy 'molcas_results.db'")

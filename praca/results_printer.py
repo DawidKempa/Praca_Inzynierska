@@ -12,18 +12,19 @@ def print_jobiph_data(jobiph_data):
         print(f"{data['file']}:   IRREP = {data['irrep']}   MULTIPLICITY = {data['multiplicity']}")
         print("-" * 30)
 
-def print_states_mapping(states_mapping, energies):# Drukuje mapowanie stanów z energiami
+def print_states_mapping(states_mapping, energies, abs_m):
     if states_mapping:
-        print(f"\n{' MAPOWANIE STANÓW Z ENERGIAMI ':-^60}")
-        print(f"{'State':<6} | {'JobIph':<8} | {'Root':<4} | {'Energy (Hartree)':<15}")
+        print(f"\n{' MAPOWANIE STANÓW Z ENERGIAMI I Abs_M ':-^60}")
+        print(f"{'State':<6} | {'JobIph':<8} | {'Root':<4} | {'Energy (Hartree)':<15} | {'Abs_M':<6}")
         print("-" * 60)
         
         for state in sorted(states_mapping.keys()):
             energy = energies.get(state, float('nan'))
+            abs_m_value = abs_m.get(state, float('nan'))
             mappings = states_mapping.get(state, [{'jobiph': 'N/A', 'root': 'N/A'}])
             
             for mapping in mappings:
-                print(f"{state:<6} | {mapping['jobiph']:<8} | {mapping['root']:<4} | {energy:>15.6f}")
+                print(f"{state:<6} | {mapping['jobiph']:<8} | {mapping['root']:<4} | {energy:>15.6f} | {abs_m_value:>6.1f}")
     else:
         print("\nNie znaleziono danych o mapowaniu stanów!")
 
