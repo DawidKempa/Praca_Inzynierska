@@ -6,6 +6,8 @@ def extract_distance_from_filename(filename):
     parts = os.path.basename(filename).split('.')
     return float(f"{parts[1]}.{parts[2]}")
 
+
+
 def parse_jobiph_section(lines, current_line_idx, current_data):
     """Parsuje sekcję JOBIPH z wykorzystaniem 'NR OF CONFIG' jako znacznika końca."""
     line = lines[current_line_idx].strip()
