@@ -1,6 +1,6 @@
 import os
 from file_parser import parse_single_file
-from database import create_database, save_to_database
+from database import create_database, save_to_database, update_database_with_mapping
 
 def get_sfstate_absm_data(input_file, max_states=99):
     """Pobiera dane SF State i Abs_M z pliku."""
@@ -55,4 +55,11 @@ if __name__ == "__main__":
     create_database()
     results = process_all_files()
     save_to_database(results)
+    
+    # Dodajemy nową część:
+    print("\nPrzetwarzanie mapowania stanów...")
+    optimal_distance = update_database_with_mapping()
+    
+    print(f"\nOptymalna odległość: {optimal_distance} Å")
+    print("Mapowanie stanów zakończone pomyślnie")
     print("Dane zapisane do bazy 'molcas_results.db'")

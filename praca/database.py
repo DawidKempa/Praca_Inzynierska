@@ -16,7 +16,9 @@ def create_database(db_name="molcas_results.db"):
         jobiph TEXT,
         root INTEGER,
         irrep INTEGER,
-        multiplicity INTEGER
+        multiplicity INTEGER,
+        order_index INTEGER,
+        irrep_index INTEGER
     )
     """)
     
@@ -24,7 +26,6 @@ def create_database(db_name="molcas_results.db"):
     conn.close()
 
 def save_to_database(results: List[Dict], db_name="molcas_results.db"):
-    """Zapisuje wyniki do bazy danych z poprawnym mapowaniem JOBIPH."""
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
     
@@ -68,3 +69,105 @@ def save_to_database(results: List[Dict], db_name="molcas_results.db"):
     
     conn.commit()
     conn.close()
+
+def find_optimal_distance(db_name="molcas_results.db"):
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    
+    cursor.execute("""
+    SELECT distance, MIN(energy) 
+    FROM calculations 
+    GROUP BY distance
+    ORDER BY energy
+    LIMIT 1
+    """)
+    
+    result = cursor.fetchone()
+    conn.close()
+    
+    if result:
+        return result[0]
+    return None
+
+def create_state_mapping(db_name="molcas_results.db", optimal_distance=None):
+    if optimal_distance is None:
+        optimal_distance = find_optimal_distance(db_name)
+    
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    
+    cursor.execute("""
+    SELECT state_num, energy, irrep, multiplicity
+    FROM calculations
+    WHERE distance = ?
+    GROUP BY state_num
+    ORDER BY energy
+    """, (optimal_distance,))
+    
+    states = cursor.fetchall()
+    
+    state_mapping = {}
+    order_index = 1
+    
+    for state_num, energy, irrep, multiplicity in states:
+        state_mapping[state_num] = {
+            'order_index': order_index,
+            'irrep': irrep,
+            'multiplicity': multiplicity,
+            'energy': energy
+        }
+        order_index += 1
+    
+    conn.close()
+    return optimal_distance, state_mapping
+
+
+def update_database_with_mapping(db_name="molcas_results.db"):
+    optimal_distance, state_mapping = create_state_mapping(db_name)
+    
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    
+    # Aktualizacja order_index
+    for state_num, data in state_mapping.items():
+        cursor.execute("""
+        UPDATE calculations
+        SET order_index = ?
+        WHERE state_num = ?
+        """, (data['order_index'], state_num))
+    
+    # Aktualizacja irrep_index
+    cursor.execute("""
+    SELECT DISTINCT distance, irrep, multiplicity, abs_m
+    FROM calculations
+    WHERE irrep IS NOT NULL AND multiplicity IS NOT NULL AND abs_m IS NOT NULL
+    """)
+    
+    symmetry_groups = cursor.fetchall()
+    
+    for distance, irrep, multiplicity, abs_m in symmetry_groups:
+        cursor.execute("""
+        SELECT state_num
+        FROM calculations
+        WHERE distance = ? AND irrep = ? AND multiplicity = ? AND abs_m = ?
+        GROUP BY state_num
+        ORDER BY energy
+        """, (distance, irrep, multiplicity, abs_m))
+        
+        states = cursor.fetchall()
+        
+        for index, (state_num,) in enumerate(states, start=1):
+            cursor.execute("""
+            UPDATE calculations
+            SET irrep_index = ?
+            WHERE state_num = ? AND distance = ?
+            """, (index, state_num, distance))
+    
+    conn.commit()
+    conn.close()
+    
+    return optimal_distance
+
+
+    
+#dodaj lambde 
